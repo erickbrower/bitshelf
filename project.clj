@@ -9,8 +9,8 @@
    [ragtime "0.3.4"]
    [environ "0.4.0"]
    [markdown-clj "0.9.41"]
-   [korma "0.3.0-RC6"]
    [com.taoensso/tower "2.0.1"]
+   [korma "0.3.0-RC6"]
    [org.clojure/clojure "1.5.1"]
    [log4j
     "1.2.17"
@@ -22,7 +22,7 @@
    [lib-noir "0.8.0"]
    [compojure "1.1.6"]
    [selmer "0.5.9"]
-   [postgresql/postgresql "9.1-901.jdbc4"]]
+   [postgresql/postgresql "9.3-1100.jdbc4"]]
   :ring
   {:handler bitshelf.handler/app,
    :init bitshelf.handler/init,
@@ -32,7 +32,7 @@
   :ragtime
   {:migrations ragtime.sql.files/migrations,
    :database
-   "jdbc:postgresql://localhost/bitshelf?user=db_user_name_here&password=db_user_password_here"}
+   "jdbc:postgresql://localhost/bitshelf?user=vagrant&password=vagrant"}
   :profiles
   {:uberjar {:aot :all},
    :production

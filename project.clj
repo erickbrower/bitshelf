@@ -22,7 +22,7 @@
    [lib-noir "0.8.0"]
    [compojure "1.1.6"]
    [selmer "0.5.9"]
-   [postgresql/postgresql "9.3-1100.jdbc4"]]
+   [postgresql/postgresql "9.1-901.jdbc4"]]
   :ring
   {:handler bitshelf.handler/app,
    :init bitshelf.handler/init,

@@ -5,20 +5,54 @@
 
 (defdb db schema/db-spec)
 
-(defentity users)
+(declare users profiles products product-types)
 
+(defentity users
+  (entity-fields :id 
+                 :email 
+                 :password_digest 
+                 :created_at 
+                 :updated_at)
+  (has-one profiles))
+
+(defentity profiles 
+  (entity-fields :id 
+                 :username 
+                 :users_id 
+                 :created_at 
+                 :updated_at))
+
+;; user data functions
 (defn create-user [user]
-  (insert users
+  (insert users 
           (values user)))
 
-(defn update-user [id first-name last-name email]
-  (update users
-  (set-fields {:first_name first-name
-               :last_name last-name
-               :email email})
-  (where {:id id})))
+(defn update-user [id username email]
+  (update users 
+    (set-fields {:username username
+                 :email email
+                 :updated_at [(= (sqlfn now))]})
+    (where {:id id})))
 
 (defn get-user [id]
   (first (select users
                  (where {:id id})
                  (limit 1))))
+
+;; profile data functions
+(defn create-profile [profile]
+  (insert profiles
+          (values profile)))
+
+(defn update-profile [id username email]
+  (update profiles 
+    (set-fields {:username username
+                 :email email
+                 :updated_at [(= (sqlfn now))]})
+    (where {:id id})))
+
+(defn get-profile [id]
+  (first (select profiles
+                 (where {:id id})
+                 (limit 1))))
+

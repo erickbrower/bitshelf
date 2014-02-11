@@ -1,0 +1,6 @@
+CREATE TABLE users 
+(id SERIAL PRIMARY KEY,
+ email VARCHAR(250) NOT NULL,
+ password-digest VARCHAR(100) NOT NULL,
+ created-at TIMESTAMP DEFAULT NOW(),
+ updated-at TIMESTAMP);

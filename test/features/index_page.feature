@@ -3,6 +3,6 @@ Feature: Cukes
 
   Scenario: Index Page
     Given I am at the "homepage"
-    Then I should see "Welcome to bitshelf"
+    Then I should see "Welcome to bitshelf.io"
 
   

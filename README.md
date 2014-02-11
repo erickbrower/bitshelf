@@ -1,5 +1,5 @@
+[![Build Status](https://travis-ci.org/erickbrower/bitshelf.png?branch=master)](https://travis-ci.org/erickbrower/bitshelf)
 # bitshelf
-
 FIXME
 
 ## Prerequisites
@@ -16,4 +16,4 @@ To start a web server for the application, run:
 
 ## License
 
-Copyright © 2014 FIXME
+Copyright © 2014 Erick Brower

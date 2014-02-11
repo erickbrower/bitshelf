@@ -3,6 +3,4 @@ lein: lein2
 jdk:
   - openjdk7
 
-script:
-  - lein test
-  - lein cucumber
+script: lein2 do test, cucumber

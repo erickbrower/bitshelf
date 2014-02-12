@@ -1,6 +1,6 @@
 CREATE TABLE profiles
 (id SERIAL PRIMARY KEY,
  username VARCHAR(30) NOT NULL UNIQUE,
- users-id INTEGER NOT NULL REFERENCES users(id),
- created-at TIMESTAMP DEFAULT NOW(),
- updated-at TIMESTAMP);
+ users_id INTEGER NOT NULL REFERENCES users(id),
+ created_at TIMESTAMP DEFAULT NOW(),
+ updated_at TIMESTAMP);

@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/erickbrower/bitshelf.png?branch=master)](https://travis-ci.org/erickbrower/bitshelf)
 # bitshelf
-FIXME
+Buy and sell original digital works from creators of ebooks, art, music, and more.
 
 ## Prerequisites
 

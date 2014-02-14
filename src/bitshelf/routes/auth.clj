@@ -30,31 +30,31 @@
   (if (valid? email username pass pass-confirm)
     (try
       (do
-        (let [user (db/create-user {:email email 
-                                    :password_digest (crypt/encrypt pass)})
-              user-id (:id user)] 
-          (db/create-profile {:username username :users_id user-id})
-          (session/put! :user-id user-id))
+        (let [user (db/create-user {:username username 
+                                    :pass (crypt/encrypt pass)})] 
+          (db/create-profile {:email email :users_id (user :id)})
+          (session/put! :username username)
+          (session/put! :user-id (user :id)))
         (resp/redirect "/"))
       (catch Exception ex
         (vali/rule false [:id (.getMessage ex)])
         (register)))
-    (register email username)))
+    (register email)))
 
 (defn profile []
   (layout/render
     "profile.html"
-    {:user (db/get-user (session/get :user-id))}))
+    {:user (db/get-user-by-email (session/get :user-email))}))
 
 (defn update-profile [{:keys [first-name last-name email]}]
   (db/update-user (session/get :user-id) first-name last-name email)
   (profile))
 
-(defn handle-login [id pass]
-  (let [user (db/get-user id)]
+(defn handle-login [email pass]
+  (let [user (db/get-user-by-email email)]
     (if (and user (crypt/compare pass (:pass user)))
-      (session/put! :user-id id))
-    (resp/redirect "/")))
+      (session/put! :user-email (user :email))))
+    (resp/redirect "/"))
 
 (defn logout []
   (session/clear!)

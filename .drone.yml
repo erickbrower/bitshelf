@@ -1,0 +1,14 @@
+image: bradrydzewski/lein
+env:
+  - GOROOT=/usr/local/go
+  - GOPATH=/var/cache/drone
+  - PATH=$GOPATH/bin:$GOPATH/bin:$PATH
+script:
+  - lein test
+notifications:
+  email:
+    enabled: true
+    recipients:
+      - cerickbrower@gmail.com
+    on_success: true
+    on_failure: true

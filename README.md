@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/erickbrower/bitshelf.png?branch=master)](https://travis-ci.org/erickbrower/bitshelf)
+[![Build Status](http://drone.bitshelf.io/github.com/erickbrower/bitshelf/status.png?branch=master)](http://drone.bitshelf.io/github.com/erickbrower/bitshelf)
 # bitshelf
-Buy and sell original digital works from creators of ebooks, art, music, and more.
+Publish your blog to epub or pdf on a daily, weekly, or monthly basis. Readers can donate bitcoin or dogecoin to download issues and subscribe to receive updates and suggestions about other blogs to follow. 
 
 ## Prerequisites
 

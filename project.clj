@@ -51,7 +51,8 @@
   [[lein-ring "0.8.10"]
    [lein-environ "0.4.0"]
    [lein-cucumber "1.0.2"]
-   [ragtime/ragtime.lein "0.3.4"]]
+   [ragtime/ragtime.lein "0.3.4"]
+   [lein-dbmaintain "0.1.1"]]
   :description
   "FIXME: write description"
   :min-lein-version "2.0.0")

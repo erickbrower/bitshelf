@@ -4,7 +4,8 @@
   (insert profiles
           (values profile)))
 
-(defn update-profile [& [id first-name last-name birthdate timezone]]
+(defn update-profile 
+  [& [id first-name last-name birthdate timezone]]
   (update profiles 
     (set-fields {:first_name first-name
                  :last_name last-name

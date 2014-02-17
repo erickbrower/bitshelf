@@ -6,7 +6,7 @@
 
 (defn update-user [id username]
   (update users 
-    (set-fields {:email username
+    (set-fields {:username username
                  :updated_at [(= (sqlfn now))]})
     (where {:id id})))
 
@@ -15,8 +15,11 @@
                  (where {:id id})
                  (limit 1))))
 
-(defn get-user-by-email [email]
-  (first (select users
-                 (where {:email email})
-                 (limit 1))))
+(defn get-user-by-login [login]
+  (first 
+    (select users 
+      (join profiles (= :profiles.users_id :id))
+      (where (or (= :profiles.email login)
+                 (= :username login))))))
+
 
